@@ -1,0 +1,81 @@
+﻿@model IEnumerable<CinemaViewModel>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "_Layout";
+}
+
+
+
+<h1 class="mb-3 display-3 text-muted text-center"> All Cinemas </h1>
+
+
+<partial name="CreateButtonPartial" model="@null" />
+
+@if (Model.Count() > 0)
+{
+    <div class="container-fluid">
+
+
+
+
+        <hr />
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <table class="table table-borderless table-striped table-hover text-center">
+
+                    <thead>
+                        <tr>
+                            <th> @Html.DisplayNameFor(d => d.Logo)  </th>
+                            <th> @Html.DisplayNameFor(d => d.Name)  </th>
+                            <th> @Html.DisplayNameFor(d => d.Description)  </th>
+                            <th> Details   </th>
+                            <th> Edit   </th>
+                            <th> Delete   </th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                        @foreach (var cinema in Model)
+                        {
+                            <tr>
+
+                                <td class="align-middle">
+                                    <img class="img-fluid"
+                                         src="@cinema.Logo" alt="@cinema.Name"
+                                         style="max-width:100px" />
+                                </td>
+
+                                <td class="align-middle">
+                                    @Html.DisplayFor(d=>cinema.Name)
+                                </td>
+
+                                <td class="align-middle">
+                                    @Html.DisplayFor(d=>cinema.Description)
+                                </td>
+
+                                <Partial name="_CrudButtonsPartial" model="@cinema.Id" />
+
+                            </tr>
+                        }
+
+                    </tbody>
+
+                </table>
+            </div>
+        </div>
+
+    </div>
+
+}
+
+else
+{
+    <div class="mt-4 alert alert-warning">
+        <h3>   There is not Cinema  : </h3>
+    </div>
+}
+
+
+

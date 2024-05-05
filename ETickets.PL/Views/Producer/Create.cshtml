@@ -1,0 +1,42 @@
+﻿@model ProducerViewModel
+@{
+    ViewData["Title"] = "Create";
+    Layout = "_Layout";
+}
+
+
+
+
+
+
+
+
+
+
+<h1 class="text-center">Add New Producer</h1>
+
+<div class="container">
+
+
+    <form asp-action="Create" method="post">
+        <div asp-validation-summary="All" class="text-danger"></div>
+
+        <partial name="PartialViews/CreateEditProducerPartialView" model="Model" />
+
+        <div class="container mt-3">
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <div class="form-group text-center">
+                        <input type="submit" value="Create" class="btn btn-primary btn-lg btn-block" style="border-radius: 20px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </form>
+</div>
+
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

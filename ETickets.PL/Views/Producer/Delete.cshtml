@@ -1,0 +1,52 @@
+﻿@model ProducerViewModel
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "_Layout";
+}
+
+<div class="mt-3">
+    <h1 class="display-3 text-center"> @Model.FullName</h1>
+</div>
+
+
+<hr />
+
+
+<div class="row">
+    <form asp-action="Delete" asp-route-id="@Model.Id" method="post">
+
+        <partial name="PartialViews/DetailsDeleteProducerPartialView" model="Model" />
+        <div class="row justify-content-around container">
+
+            <div class="container mt-3">
+                <div class="row justify-content-center">
+                    <div class="col-md-8">
+                        <!-- Button 1 -->
+                        <div class="row justify-content-center">
+                            <div class="col-md-6">
+                                <button type="submit" class="btn btn-danger me-4" style="border-radius: 20px; padding: 5px 15px;">
+                                    <i class="bi bi-trash-fill mr-2"></i> Delete
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Button 2 -->
+                        <div class="row justify-content-center mt-3">
+                            <div class="col-md-6">
+                                <a asp-action="Index" class="btn btn-info" style="border-radius: 20px; padding: 5px 15px;">
+                                    <i class="bi bi-arrow-right-circle mr-2"></i> Return
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </form>
+
+
+
+</div>
+

@@ -1,0 +1,29 @@
+﻿@model ProducerViewModel
+
+
+<div class="container ms-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card mt-5">
+                <div class="card-body">
+                    <div class="text-center mb-4">
+                        <img src="@Model.ProfilePictureUrl" alt="@Model.FullName" class="img-fluid rounded-circle" style="max-width: 150px;" />
+                        <input type="hidden" asp-for="ProfilePictureUrl" />
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="FullName" class="form-label">Full Name</label>
+                        <input asp-for="FullName" class="form-control" readonly />
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Bio" class="form-label">Bio</label>
+                        <textarea asp-for="Bio" class="form-control" rows="3" readonly></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

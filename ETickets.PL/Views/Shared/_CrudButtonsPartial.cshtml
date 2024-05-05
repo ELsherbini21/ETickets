@@ -1,0 +1,23 @@
+﻿@model int
+
+
+<td class="align-middle">
+    <a asp-action="Details" asp-route-id="@Model" class="btn btn-outline-warning">
+        <i class="bi bi-eye"></i>
+        Details
+    </a>
+</td>
+
+<td class="align-middle">
+    <a asp-action="Edit" asp-route-id="@Model" class="btn btn-outline-success">
+        <i class="bi bi-pencil-square"></i>
+        Edit
+    </a>
+</td>
+
+<td class="align-middle">
+    <a asp-action="Delete" asp-route-id="@Model" class="btn btn-outline-danger">
+        <i class="bi bi-trash"></i>
+        Delete
+    </a>
+</td>

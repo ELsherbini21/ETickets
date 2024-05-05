@@ -1,0 +1,26 @@
+﻿@model CinemaViewModel
+
+<dl class="row ">
+
+
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.Logo)
+    </dt>
+    <dd class="col-sm-10">
+        <img src="@Model.Logo" class="img-fluid" />
+    </dd>
+ 
+    <div class="form-group my-3">
+        <label asp-for="Logo" class="control-label" hidden></label>
+        <input asp-for="Logo" class="form-control" readonly  hidden/>
+    </div>
+    <div class="form-group my-3">
+        <label asp-for="Name" class="control-label"></label>
+        <input asp-for="Name" class="form-control" readonly />
+    </div>
+    <div class="form-group my-3">
+        <label asp-for="Description" class="control-label"></label>
+        <input asp-for="Description" class="form-control" readonly/>
+    </div>
+
+</dl>

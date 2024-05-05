@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 Not Found</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .error-container {
+            text-align: center;
+            margin-top: 100px;
+        }
+
+        .error-image {
+            width: 200px;
+            margin-bottom: 20px;
+        }
+
+        .error-message {
+            font-size: 24px;
+            font-weight: bold;
+            color: #dc3545;
+            margin-bottom: 20px;
+        }
+
+        .error-description {
+            font-size: 18px;
+            color: #6c757d;
+        }
+    </style>
+</head>
+<body>
+    <div class="container error-container">
+        <div class="error-message">404 Not Found</div>
+        <div class="error-description">The page you're looking for could not be found.</div>
+        <a asp-action="Index" class="btn btn-primary">Go Back</a>
+    </div>
+</body>
+</html>

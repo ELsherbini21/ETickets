@@ -1,0 +1,64 @@
+﻿@model IEnumerable<ProducerViewModel>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "_Layout";
+}
+
+
+<div class="container mt-5">
+    <h1 class="mb-3 display-3 text-muted text-center"> All Producers </h1>
+    <div class="row justify-content-center mb-3">
+        <div class="col-md-4">
+            <partial name="CreateButtonPartial" model="null" />
+        </div>
+    </div>
+
+
+    @if (Model.Count() > 0)
+    {
+        <div class="row">
+            <div class="col-md-10 offset-md-1">
+                <div class="table-responsive">
+                    <table class="table table-bordered table-striped text-center">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th>@Html.DisplayNameFor(model=>model.ProfilePictureUrl)</th>
+                                <th>@Html.DisplayNameFor(model=>model.FullName)</th>
+                                <th>@Html.DisplayNameFor(model=>model.Bio)</th>
+                                <th>Details</th>
+                                <th>Edit</th>
+                                <th>Delete</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var producer in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        <img src="@producer.ProfilePictureUrl" alt="@producer.FullName" class="img-fluid rounded-circle" style="max-width: 100px;" />
+                                    </td>
+                                    <td>@producer.FullName</td>
+                                    <td>@producer.Bio</td>
+                                        <partial name="_CrudButtonsPartial" model="@producer.Id" />
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    }
+
+
+    else
+    {
+        <div class="alert alert-warning mt-4" role="alert">
+            <h3 class="text-center">There are no producers to Display .</h3>
+        </div>
+    }
+
+
+</div>
+
+

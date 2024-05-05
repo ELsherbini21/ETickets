@@ -1,0 +1,64 @@
+﻿
+<nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+    <div class="container-fluid">
+        <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">ETickets</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+            <ul class="navbar-nav flex-grow-1">
+
+
+                <li class="nav-item">
+                    <a class="nav-link text-dark" asp-area="" asp-controller="Movie" asp-action="Index">
+                        <i class=" bi bi-film"></i> Movies
+                    </a>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-black" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">
+                        <i class="bi bi-gear"> Management</i>
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+                        <li>
+                            <a class="dropdown-item" asp-area="" asp-controller="Cinema" asp-action="Index">
+                                <i class="bi bi-camera-reels"></i> Cinema
+                            </a>
+                        </li>
+
+                        <li>
+                            <a class="dropdown-item" asp-area="" asp-controller="Producer" asp-action="Index">
+                                <i class="bi bi-headset"></i> Producer
+                            </a>
+                        </li>
+
+                        <li>
+                            <a class="dropdown-item" asp-area="" asp-controller="Actor" asp-action="Index">
+                                <i class="bi bi-person-square"></i> Actor
+                            </a>
+                        </li>
+
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+
+                        <li>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                        </li>
+                    </ul>
+                </li>
+
+            </ul>
+            <form class="d-flex" asp-controller="Movie" asp-action="Filter">
+                <input class="form-control me-2" type="search" placeholder="Search for Movie" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">
+                    <i class="bi bi-search"> </i>
+                </button>
+            </form>
+
+        </div>
+    </div>
+</nav>

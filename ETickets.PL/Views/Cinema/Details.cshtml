@@ -1,0 +1,66 @@
+﻿@model CinemaViewModel
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "_Layout";
+}
+<html>
+<head>
+
+    <style>
+        .movie-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .movie-list-item {
+            padding: 10px;
+            background-color: #f8f9fa;
+            margin-bottom: 5px;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+
+    <div>
+        <h4 class="">CinemaViewModel</h4>
+        <hr />
+        <div class="container">
+
+            <partial name="PartialViews/DetailsDeleteCinemaPartial" model="@Model" />
+            @if (Model.Movies.Count() > 0)
+            {
+               
+                <div class="container mt-5">
+                    <h2 class="text-center mb-4">Movie List</h2>
+                    <hr class="w-50 m-auto" />
+                    <ul class="movie-list">
+                        @foreach (var item in Model.Movies)
+                        {
+                            <li class="movie-list-item">@item.Name</li>
+
+                        }
+                    </ul>
+                </div>
+            }
+            else
+            {
+                <div class="container mt-5">
+                    <h2 class="text-center text-danger mb-4">There no Movie To Display Sir </h2>
+                    <hr class="w-50 m-auto" />
+                </div>
+            }
+
+            <div class="mt-5">
+                <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-primary"> Edit</a>
+                <a asp-action="Index" class="btn btn-info"> Back To Index</a>
+            </div>
+        </div>
+
+
+    </div>
+</body>
+
+</html>

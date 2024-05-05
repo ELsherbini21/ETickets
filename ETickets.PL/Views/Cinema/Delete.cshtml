@@ -1,0 +1,26 @@
+﻿@model CinemaViewModel
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "_Layout";
+}
+
+
+<div>
+    <h4 class="text-muted text-center">@Model.Name</h4>
+    <hr />
+    <div class="container">
+        <form asp-action="Delete" asp-route-id ="@Model.Id" method="post">
+            <partial name="PartialViews/DetailsDeleteCinemaPartial" model="@Model" />
+            <div class="mt-5">
+                <input type="submit" value="Confirm Delete" class="btn btn-primary" />
+                <a asp-action="Index" class="btn btn-info"> Cancel </a>
+            </div>
+        </form>
+
+
+    </div>
+
+
+</div>
+

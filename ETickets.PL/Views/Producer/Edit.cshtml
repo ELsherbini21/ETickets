@@ -1,0 +1,59 @@
+﻿@model ProducerViewModel
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .small-image {
+            width: 150px;
+            height: auto;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <img src="@Model.ProfilePictureUrl" alt="@Model.FullName" class="img-fluid small-image mb-3">
+                        <form asp-action="Edit" asp-route-id="@Model.Id">
+                            <partial name="PartialViews/CreateEditProducerPartialView" model="Model">
+                                <button type="submit" class="btn btn-primary btn-block">Save Edit </button>
+                                <a asp-action="Index" class="btn btn-success btn-block">Cancel</a>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+  
+
+
+
+
+     
+
+
+    @section Scripts {
+        @{
+            await Html.RenderPartialAsync("_ValidationScriptsPartial");
+        }
+    }
+
+</body>
+
+</html>
+
