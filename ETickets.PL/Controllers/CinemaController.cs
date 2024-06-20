@@ -80,7 +80,7 @@ namespace ETickets.PL.Controllers
                 {
                     var mappedCinemaToModel = mapper.Map<CinemaViewModel, Cinema>(_cinemaViewModel);
 
-                    await unitOfWork.CinemaRepository.AddAsync(mappedCinemaToModel);
+                    await unitOfWork.CinemaRepository.UpdateAsync(mappedCinemaToModel);
 
                     unitOfWork.Complete();
 

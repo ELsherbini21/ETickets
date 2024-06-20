@@ -1,4 +1,5 @@
 ﻿using ETickets.DAL.Models;
+using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
 using Microsoft.DotNet.Scaffolding.Shared.Messaging;
 using System.ComponentModel.DataAnnotations;
 
@@ -19,7 +20,8 @@ namespace ETickets.PL.ViewModels
 
         public string Bio { get; set; }
 
+        [ValidateNever]
         public virtual ICollection<ActorsMovies> ActorsMovies { get; set; }
-     
+
     }
 }

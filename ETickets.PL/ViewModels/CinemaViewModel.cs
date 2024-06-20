@@ -1,4 +1,5 @@
 ﻿using ETickets.DAL.Models;
+using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
 
 namespace ETickets.PL.ViewModels
 {
@@ -12,6 +13,7 @@ namespace ETickets.PL.ViewModels
 
         public string Description { get; set; }
 
+        [ValidateNever]
         public virtual ICollection<Movie> Movies { get; set; }
 
     }
